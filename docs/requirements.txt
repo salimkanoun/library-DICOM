@@ -1,0 +1,14 @@
+fpdf==1.7.2
+imageio==2.9.0
+opencv_python==4.5.1.48
+matplotlib==3.4.2
+numpy>=1.19
+pandas==1.2.3
+Pillow==8.2.0
+plotly_express==0.4.1
+pydicom_seg==0.2.3
+pydicom==2.1.2
+pyradiomics==3.0.1
+scikit-image==0.18.1
+scipy==1.6.3
+SimpleITK==2.0.2
