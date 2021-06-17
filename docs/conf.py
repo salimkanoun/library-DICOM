@@ -17,7 +17,6 @@ sys.path.insert(0, os.path.abspath('..'))
 print(os.path.abspath('..'))
 
 import dicom_to_cnn
-import radiomics
 import sphinx_rtd_theme
 
 
