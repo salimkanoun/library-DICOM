@@ -1,0 +1,1213 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>dicom_to_cnn.model.reader package &mdash; dicom_to_cnn 0.72 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dicom_to_cnn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">dicom_to_cnn.model.reader package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.reader.Instance">dicom_to_cnn.model.reader.Instance module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.reader.Instance_RTDose">dicom_to_cnn.model.reader.Instance_RTDose module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.reader.Instance_RTSS">dicom_to_cnn.model.reader.Instance_RTSS module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.reader.Nifti">dicom_to_cnn.model.reader.Nifti module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.reader.Series">dicom_to_cnn.model.reader.Series module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.reader.SeriesCT">dicom_to_cnn.model.reader.SeriesCT module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.reader.SeriesPT">dicom_to_cnn.model.reader.SeriesPT module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.reader">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dicom_to_cnn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>dicom_to_cnn.model.reader package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dicom_to_cnn.model.reader.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dicom-to-cnn-model-reader-package">
+<h1>dicom_to_cnn.model.reader package<a class="headerlink" href="#dicom-to-cnn-model-reader-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dicom_to_cnn.model.reader.Instance">
+<span id="dicom-to-cnn-model-reader-instance-module"></span><h2>dicom_to_cnn.model.reader.Instance module<a class="headerlink" href="#module-dicom_to_cnn.model.reader.Instance" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.reader.Instance.</span></span><span class="sig-name descname"><span class="pre">Instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_image</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to represent a Dicom file</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_SOPInstanceUID">
+<span class="sig-name descname"><span class="pre">get_SOPInstanceUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_SOPInstanceUID" title="Permalink to this definition">¶</a></dt>
+<dd><p>get SOPInstanceUID value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_accession_number">
+<span class="sig-name descname"><span class="pre">get_accession_number</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_accession_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>get Accession Number value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_acquisition_date">
+<span class="sig-name descname"><span class="pre">get_acquisition_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_acquisition_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>get acquisition date value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_acquisition_time">
+<span class="sig-name descname"><span class="pre">get_acquisition_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_acquisition_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>get acquisition time value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_frame_of_reference_uid">
+<span class="sig-name descname"><span class="pre">get_frame_of_reference_uid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_frame_of_reference_uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>get frame of reference uid value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_image_nparray">
+<span class="sig-name descname"><span class="pre">get_image_nparray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_image_nparray" title="Permalink to this definition">¶</a></dt>
+<dd><p>get instance image ndarray</p>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>Exception: [raise Exception if SOPClassUID not in sop values list]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[ndarray]: [return instance image ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_image_orientation">
+<span class="sig-name descname"><span class="pre">get_image_orientation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_image_orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>get image orientation value x,y,z</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_image_position">
+<span class="sig-name descname"><span class="pre">get_image_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_image_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>get image position value x,y,z</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_image_type">
+<span class="sig-name descname"><span class="pre">get_image_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_image_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>get Image type value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_instance_tags">
+<span class="sig-name descname"><span class="pre">get_instance_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_instance_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather instance tags</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict]: [dictionnary of every instance tags and value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_number_columns">
+<span class="sig-name descname"><span class="pre">get_number_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_number_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>get number of columns value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_number_rows">
+<span class="sig-name descname"><span class="pre">get_number_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_number_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>get number of rows value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_patient_birth_date">
+<span class="sig-name descname"><span class="pre">get_patient_birth_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_patient_birth_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>get Patient Birth Date value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_patient_id">
+<span class="sig-name descname"><span class="pre">get_patient_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_patient_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>get patient ID value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_patient_name">
+<span class="sig-name descname"><span class="pre">get_patient_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_patient_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>get Patient Name value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_patient_sex">
+<span class="sig-name descname"><span class="pre">get_patient_sex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_patient_sex" title="Permalink to this definition">¶</a></dt>
+<dd><p>get Patient sex value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_patients_tags">
+<span class="sig-name descname"><span class="pre">get_patients_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_patients_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather patient tags</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict]: [dictionnary of every patient tags and value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_pet_correction_tags">
+<span class="sig-name descname"><span class="pre">get_pet_correction_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_pet_correction_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather pet correction tags</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict]: [dictionnary of every pet correction tags and value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_philips_private_tags">
+<span class="sig-name descname"><span class="pre">get_philips_private_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_philips_private_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather philips private tags</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict]: [dictionnary of every philips private tags and value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_physicians_of_record">
+<span class="sig-name descname"><span class="pre">get_physicians_of_record</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_physicians_of_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>geet physicians of record value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_pixel_spacing">
+<span class="sig-name descname"><span class="pre">get_pixel_spacing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_pixel_spacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>get pixel spacing value x,y</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_radiopharmaceuticals_tags">
+<span class="sig-name descname"><span class="pre">get_radiopharmaceuticals_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_radiopharmaceuticals_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather radiopharmaceutical tags</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict]: [dictionnary of every radiopharmaceutical tags and value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_referring_physician_name">
+<span class="sig-name descname"><span class="pre">get_referring_physician_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_referring_physician_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>get referring physician name value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_rescale_intercept">
+<span class="sig-name descname"><span class="pre">get_rescale_intercept</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_rescale_intercept" title="Permalink to this definition">¶</a></dt>
+<dd><p>get rescale intercept value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_rescale_slope">
+<span class="sig-name descname"><span class="pre">get_rescale_slope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_rescale_slope" title="Permalink to this definition">¶</a></dt>
+<dd><p>get rescale slope value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_series_instance_uid">
+<span class="sig-name descname"><span class="pre">get_series_instance_uid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_series_instance_uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>get Series Instance UID value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_series_tags">
+<span class="sig-name descname"><span class="pre">get_series_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_series_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather series tags</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict]: [dictionnary of every series tags and value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_sop_class_uid">
+<span class="sig-name descname"><span class="pre">get_sop_class_uid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_sop_class_uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get sop class uid</p>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>Exception: [raise exception if undefined SOPClassUID]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[str]: [return SOPClassUID value if defined]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_specific_character_set">
+<span class="sig-name descname"><span class="pre">get_specific_character_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_specific_character_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>get specific chracter set value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_studies_tags">
+<span class="sig-name descname"><span class="pre">get_studies_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_studies_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather study tags</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict]: [dictionnary of every study tags and value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_study_date">
+<span class="sig-name descname"><span class="pre">get_study_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_study_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>get study date value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_study_description">
+<span class="sig-name descname"><span class="pre">get_study_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_study_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>get Study Description value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_study_id">
+<span class="sig-name descname"><span class="pre">get_study_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_study_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>get study id value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_study_instance_uid">
+<span class="sig-name descname"><span class="pre">get_study_instance_uid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_study_instance_uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>get study instance uid value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.get_study_time">
+<span class="sig-name descname"><span class="pre">get_study_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.get_study_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>get study time value</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.is_image_modality">
+<span class="sig-name descname"><span class="pre">is_image_modality</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.is_image_modality" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if SOPClassUID in sop values list</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[bool]: [return True if SOPCLassUID in sop values list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance.Instance.is_secondary_capture">
+<span class="sig-name descname"><span class="pre">is_secondary_capture</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance.Instance.is_secondary_capture" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if SOPClassUID in CapturesSOPClass list</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[bool]: [return True if SOPCLassUID in CapturesSOPClass list, False instead]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.reader.Instance_RTDose">
+<span id="dicom-to-cnn-model-reader-instance-rtdose-module"></span><h2>dicom_to_cnn.model.reader.Instance_RTDose module<a class="headerlink" href="#module-dicom_to_cnn.model.reader.Instance_RTDose" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTDose.Instance_RTDose">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.reader.Instance_RTDose.</span></span><span class="sig-name descname"><span class="pre">Instance_RTDose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_dose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTDose.Instance_RTDose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dicom_to_cnn.model.reader.Instance.Instance" title="dicom_to_cnn.model.reader.Instance.Instance"><code class="xref py py-class docutils literal notranslate"><span class="pre">dicom_to_cnn.model.reader.Instance.Instance</span></code></a></p>
+<p>A class to represent a RTDose Dicom File</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>Instance ([type]): [description]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTDose.Instance_RTDose.get_image_nparray">
+<span class="sig-name descname"><span class="pre">get_image_nparray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTDose.Instance_RTDose.get_image_nparray" title="Permalink to this definition">¶</a></dt>
+<dd><p>get 3d matrix of rt dose</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[np.ndarray]: [return the 3D array from a RTDose file, shape (z,y,x) ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTDose.Instance_RTDose.wrap_DHVSequence_in_dict">
+<span class="sig-name descname"><span class="pre">wrap_DHVSequence_in_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rtss_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTDose.Instance_RTDose.wrap_DHVSequence_in_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>wrap in dictionnary DVH Sequence of each ROI 
+dict = { (roi) 1 : {‘ReferencedROINumber’ : value</p>
+<blockquote>
+<div><blockquote>
+<div><p>‘DVHType’ : value
+‘DoseUnits’ : value
+‘DVHDoseScaling’ : value
+‘DVHVolumeUnits’:  value
+‘DVHNumberOfBins’ : value
+‘DVHMinimumDose’ : value
+‘DVHMaximumDose’ : value
+‘DVHMeanDose’ : value
+‘DVHData’ : value},</p>
+</div></blockquote>
+<dl class="simple">
+<dt>(roi) 2<span class="classifier">{‘ReferencedROINumber’</span><span class="classifier">value</span></dt><dd><p>‘DVHType’ : value
+‘DoseUnits’ : value
+‘DVHDoseScaling’ : value
+‘DVHVolumeUnits’:  value
+‘DVHNumberOfBins’ : value
+‘DVHMinimumDose’ : value
+‘DVHMaximumDose’ : value
+‘DVHMeanDose’ : value
+‘DVHData’ : value}, …}</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict]: [return a dictionnary, with, for each ROI, DVHSequence in the RTDose file]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.reader.Instance_RTSS">
+<span id="dicom-to-cnn-model-reader-instance-rtss-module"></span><h2>dicom_to_cnn.model.reader.Instance_RTSS module<a class="headerlink" href="#module-dicom_to_cnn.model.reader.Instance_RTSS" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.reader.Instance_RTSS.</span></span><span class="sig-name descname"><span class="pre">Instance_RTSS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_rtss</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dicom_to_cnn.model.reader.Instance.Instance" title="dicom_to_cnn.model.reader.Instance.Instance"><code class="xref py py-class docutils literal notranslate"><span class="pre">dicom_to_cnn.model.reader.Instance.Instance</span></code></a></p>
+<p>A class to represent a RTSTRUCT Dicom file</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_ROI_generation_algorithm">
+<span class="sig-name descname"><span class="pre">get_ROI_generation_algorithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_roi</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_ROI_generation_algorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get ROIGenerationAlgorithm value from StructureSetROI Sequence
+Args:</p>
+<blockquote>
+<div><p>number_roi (int): [ROI number; start at 1. ]</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[str]: [return ROIGenerationAlgorithme value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_ROI_name">
+<span class="sig-name descname"><span class="pre">get_ROI_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_roi</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_ROI_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get ROI name from StructureSetROI Sequence</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>number_roi (int): [ROI number; start at 1. ]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[str]: [return ROI name]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_ROI_volume">
+<span class="sig-name descname"><span class="pre">get_ROI_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_roi</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_ROI_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get ROI volume from StructureSetROI Sequence</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>number_roi (int): [ROI number; start at 1. ]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[str]: [return ROI volume value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_contour_data">
+<span class="sig-name descname"><span class="pre">get_contour_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_contour_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get contour data of contours  from ROIContour Sequence</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>number_roi (int): [ROI number; start at 1. ]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [return list of contour data for each contour [[contour1 : x, y, z, x, y ,z, …], [contour2 : …], […]] ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_frame_of_reference_uid">
+<span class="sig-name descname"><span class="pre">get_frame_of_reference_uid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_frame_of_reference_uid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>method to get FrameOfReferenceUID for each series referenced in ReferencedFrameOfReference Sequence.</dt><dd><p>Usually, only one serie referenced.</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [list of FrameOfReferenceUID in ReferencedFrameOfReference Sequence]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_image_nparray">
+<span class="sig-name descname"><span class="pre">get_image_nparray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_image_nparray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can’t get image numpy array from a RTSTRUCT FILE</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_list_all_SOP_Instance_UID_RTSS">
+<span class="sig-name descname"><span class="pre">get_list_all_SOP_Instance_UID_RTSS</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_list_all_SOP_Instance_UID_RTSS" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get all SOPInstanceUID referenced in RTSTRUCT File</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[list]: [list of all SOP Instance UID]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_list_contour_SOP_Instance_UID">
+<span class="sig-name descname"><span class="pre">get_list_contour_SOP_Instance_UID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_list_contour_SOP_Instance_UID" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get a list of every contour SOPINstanceUID  from ROIContour Sequence</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>number_roi (int): [ROI number; start at 1. ]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [return list of every SOPInstanceUID where there is a contour]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_list_contour_geometric_type">
+<span class="sig-name descname"><span class="pre">get_list_contour_geometric_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_list_contour_geometric_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get a list of every ContourGeomtricType value of each contour  from ROIContour Sequence</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>number_roi (int): [ROI number; start at 1. ]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [return a list with every ContourGeometricType value for each contour]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_number_of_contour_points">
+<span class="sig-name descname"><span class="pre">get_number_of_contour_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_number_of_contour_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get a list of every NumberOfContourPoint in each contours  from ROIContour Sequence</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>number_roi (int): [ROI number; start at 1. ]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [return list of number of contour points]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_number_of_referenced_series">
+<span class="sig-name descname"><span class="pre">get_number_of_referenced_series</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_number_of_referenced_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to count the series referenced in ReferencedFrameOfReference Sequence</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[int]: [return the number of series referenced in ReferencedFrameOfReference Sequence]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_number_of_roi">
+<span class="sig-name descname"><span class="pre">get_number_of_roi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_number_of_roi" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to count number of ROI in RTSTRUCT File</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[int]: [return the number of ROI in RTSS]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_referenced_SOP_class_UID">
+<span class="sig-name descname"><span class="pre">get_referenced_SOP_class_UID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_referenced_SOP_class_UID" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>method to get a list of SOPClassUID for each series referenced in ReferencedFrameOfReference Sequence.</dt><dd><p>Usually, only one serie referenced.
+Has to be the same SOPCLassUID in the associated serie.</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [list of SOPClassUID for each series referenced]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_referenced_series_instance_uid">
+<span class="sig-name descname"><span class="pre">get_referenced_series_instance_uid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_referenced_series_instance_uid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>method to get a list of SeriesInstanceUID for each series referenced in ReferencedFrameOfReference Sequence.</dt><dd><p>Usually, only one serie referenced.
+Has to be the same SeriesInstanceUID in the associated serie.</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [list of SeriesInstanceUID for each series referenced]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_referenced_study_SOP_instance_uid">
+<span class="sig-name descname"><span class="pre">get_referenced_study_SOP_instance_uid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_referenced_study_SOP_instance_uid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>method to get a list of StudyInstanceUID for each series referenced in ReferencedFrameOfReference Sequence.</dt><dd><p>Usually, only one serie referenced.
+Has to be the same StudyInstanceUID in the associated serie.</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [list of StudyInstanceUID for each series referenced]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_roi_display_color">
+<span class="sig-name descname"><span class="pre">get_roi_display_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_roi</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.get_roi_display_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get ROI color representation from ROIContour Sequence</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>number_roi (int): [ROI number; start at 1. ]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[str]: [return ROIDisplayColor value , format [r,g,b]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.is_closed_planar">
+<span class="sig-name descname"><span class="pre">is_closed_planar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.is_closed_planar" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if every contour is CLOSED_PLANAR  from ROIContour Sequence</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>roi_number (int): [ROI number, start a 1]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[bool]: [return True if every value is CLOSED_PLANAR, False instead]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.is_frame_of_reference_same">
+<span class="sig-name descname"><span class="pre">is_frame_of_reference_same</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_of_ref_uid_serie</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.is_frame_of_reference_same" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if FrameOfReferenceUID in RTSS == FrameOfReferenceUID in associated serie</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>frame_of_ref_uid_serie (str): [FrameOfReferenceUID in the associated serie]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[bool]: [return True if UID in RTSS and UID in associated serie are equal, False instead. ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.is_referenced_SOP_Instance_UID_in_all_SOP_Instance">
+<span class="sig-name descname"><span class="pre">is_referenced_SOP_Instance_UID_in_all_SOP_Instance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Instance_RTSS.Instance_RTSS.is_referenced_SOP_Instance_UID_in_all_SOP_Instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if every  SOPInstanceUID contour is referenced in the SOPINstanceUID of the associated serie</p>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>Exception: [Exception if one of the SOPInstanceUID contour is not referenced in all SOPInstanceUID of the associated serie]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[bool]: [True if everything referenced, raise Exception instead]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.reader.Nifti">
+<span id="dicom-to-cnn-model-reader-nifti-module"></span><h2>dicom_to_cnn.model.reader.Nifti module<a class="headerlink" href="#module-dicom_to_cnn.model.reader.Nifti" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Nifti.Nifti">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.reader.Nifti.</span></span><span class="sig-name descname"><span class="pre">Nifti</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nifti_img_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Nifti.Nifti" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>a class to read a nifti image, resample it</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Nifti.Nifti.resample">
+<span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">(256,</span> <span class="pre">256,</span> <span class="pre">1024)</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Nifti.Nifti.resample" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to resample sitk image of shape (x,y,z), put it in a bigger and empty np.ndarray</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>shape (tuple) : [shape of the new sitk image, shape (x,y,z)].</p>
+</dd>
+<dt>Returns:</dt><dd><p>[np.ndarray]: [return corresponding resampled np.ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.reader.Series">
+<span id="dicom-to-cnn-model-reader-series-module"></span><h2>dicom_to_cnn.model.reader.Series module<a class="headerlink" href="#module-dicom_to_cnn.model.reader.Series" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.reader.Series.</span></span><span class="sig-name descname"><span class="pre">Series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a series Dicom</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.calculate_z_spacing">
+<span class="sig-name descname"><span class="pre">calculate_z_spacing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">round_</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.calculate_z_spacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to calculate the z_spacing between slice and gather in list</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p><a href="#id1"><span class="problematic" id="id2">round_</span></a> (bool, optional): [choose if round the z_position or not]. Defaults to False.</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [return list of z spacing]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.export_nifti">
+<span class="sig-name descname"><span class="pre">export_nifti</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.export_nifti" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to export ndarray of series to nifti and save it</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path (str): [directory+filename of the nifti]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_all_SOPInstanceIUD">
+<span class="sig-name descname"><span class="pre">get_all_SOPInstanceIUD</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_all_SOPInstanceIUD" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather all SOPInstanceUID of every Instance in serie</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[list]: [list of every SOPInstanceUID]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_all_acquisition_time">
+<span class="sig-name descname"><span class="pre">get_all_acquisition_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_all_acquisition_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather all AcquisitionTime of every Instance in serie</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[list]: [list of every Acquisition Time]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_first_instance_metadata">
+<span class="sig-name descname"><span class="pre">get_first_instance_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#dicom_to_cnn.model.reader.Instance.Instance" title="dicom_to_cnn.model.reader.Instance.Instance"><span class="pre">dicom_to_cnn.model.reader.Instance.Instance</span></a><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_first_instance_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to read the first dicom instance in the folder</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[Instance]: [return Instance object]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_instances_ordered">
+<span class="sig-name descname"><span class="pre">get_instances_ordered</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_instances_ordered" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to sort instances array by z positions</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[list]: [return ordered instance array]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_number_of_files">
+<span class="sig-name descname"><span class="pre">get_number_of_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_number_of_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get number of instance in serie folder</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[int]: [return number of files/instances in serie folder]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_numpy_array">
+<span class="sig-name descname"><span class="pre">get_numpy_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_numpy_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get 3d numpy array of the serie</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[ndarray]: [return ndarray of series]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_series_details">
+<span class="sig-name descname"><span class="pre">get_series_details</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_series_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the first dicom in the folder and store Patient / Study / Series
+informations</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict] – [Return the details of a Serie from the first Dicom]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_size_matrix">
+<span class="sig-name descname"><span class="pre">get_size_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_size_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get size of PET matrix/array</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[list]: [  [x,y,z]  ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_z_positions">
+<span class="sig-name descname"><span class="pre">get_z_positions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_z_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to gather z positions of each dicom in serie</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[list]: [return list of z positions]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.get_z_spacing">
+<span class="sig-name descname"><span class="pre">get_z_spacing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.get_z_spacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to calculate z_spacing</p>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>Exception: [raise Exception if unconstant z spacing]]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[float]: [return z spacing value]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.is_image_modality">
+<span class="sig-name descname"><span class="pre">is_image_modality</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.is_image_modality" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if SOPClassUID from the first dicom is in sop values list</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[type]: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.is_localizer_series">
+<span class="sig-name descname"><span class="pre">is_localizer_series</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.is_localizer_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if “LOCALIZER” in ImageType tag values</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[bool]: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.is_primary_image">
+<span class="sig-name descname"><span class="pre">is_primary_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.is_primary_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if “PRIMARY” in ImageType tag values</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[bool]: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.Series.Series.is_series_valid">
+<span class="sig-name descname"><span class="pre">is_series_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.Series.Series.is_series_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if the number of slice is wrong, or if the Series Instance UID is the same</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[bool]: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.reader.SeriesCT">
+<span id="dicom-to-cnn-model-reader-seriesct-module"></span><h2>dicom_to_cnn.model.reader.SeriesCT module<a class="headerlink" href="#module-dicom_to_cnn.model.reader.SeriesCT" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesCT.SeriesCT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.reader.SeriesCT.</span></span><span class="sig-name descname"><span class="pre">SeriesCT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesCT.SeriesCT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dicom_to_cnn.model.reader.Series.Series" title="dicom_to_cnn.model.reader.Series.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">dicom_to_cnn.model.reader.Series.Series</span></code></a></p>
+<p>Get Series CT Nifti in 16 Bits</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>Series {String} – Series Location Path</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesCT.SeriesCT.export_nifti">
+<span class="sig-name descname"><span class="pre">export_nifti</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesCT.SeriesCT.export_nifti" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to export/save ndarray of series to nifti format</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path (str): [directory+filename of the nifti]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesCT.SeriesCT.get_numpy_array">
+<span class="sig-name descname"><span class="pre">get_numpy_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesCT.SeriesCT.get_numpy_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get 3d numpy array of the serie</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[ndarray]: [return ndarray of series]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.reader.SeriesPT">
+<span id="dicom-to-cnn-model-reader-seriespt-module"></span><h2>dicom_to_cnn.model.reader.SeriesPT module<a class="headerlink" href="#module-dicom_to_cnn.model.reader.SeriesPT" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesPT.SeriesPT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.reader.SeriesPT.</span></span><span class="sig-name descname"><span class="pre">SeriesPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesPT.SeriesPT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dicom_to_cnn.model.reader.Series.Series" title="dicom_to_cnn.model.reader.Series.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">dicom_to_cnn.model.reader.Series.Series</span></code></a></p>
+<p>Specific methods to read PET series
+Store radiopharmaceutical data
+Check Attenuation conrrection
+SUV / SUL calculation
+Get Series as 32bits Nifti SUV/SUL</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>Series {[class]} – [description]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesPT.SeriesPT.calculateSULFactor">
+<span class="sig-name descname"><span class="pre">calculateSULFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesPT.SeriesPT.calculateSULFactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calcul SUL Factor</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[float] – [Return SUL Factor or “Calcul SUL impossible” if there is “Undefined” value in tags]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesPT.SeriesPT.export_nifti">
+<span class="sig-name descname"><span class="pre">export_nifti</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesPT.SeriesPT.export_nifti" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to export/save ndarray of series to nifti format</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path (str): [directory+filename of the nifti]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesPT.SeriesPT.get_minimum_acquisition_datetime">
+<span class="sig-name descname"><span class="pre">get_minimum_acquisition_datetime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">datetime.datetime</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesPT.SeriesPT.get_minimum_acquisition_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get earlier acquisition datetime of the PET serie</p>
+<dl class="simple">
+<dt>Returns<span class="classifier"></span></dt><dd><p>[datetime] – [Return the earlier acquisition datetime, or “Undefined” if no acquisition_time or no acquisition date]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesPT.SeriesPT.get_numpy_array">
+<span class="sig-name descname"><span class="pre">get_numpy_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesPT.SeriesPT.get_numpy_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get 3D numpy array</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[ndarray] – [return array of the SeriesPT with SUV and SUL factor in 32bis npArray ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesPT.SeriesPT.get_series_details">
+<span class="sig-name descname"><span class="pre">get_series_details</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesPT.SeriesPT.get_series_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add Pharmaceuticals data to common series details</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[dict] – [Return the details of a SeriePT from the first Dicom]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesPT.SeriesPT.is_corrected_attenuation">
+<span class="sig-name descname"><span class="pre">is_corrected_attenuation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesPT.SeriesPT.is_corrected_attenuation" title="Permalink to this definition">¶</a></dt>
+<dd><p>If PET Series is attenuation corrected</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[bool] – [True if attenuation corrected]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.reader.SeriesPT.SeriesPT.set_ExportType">
+<span class="sig-name descname"><span class="pre">set_ExportType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">export_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'suv'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.reader.SeriesPT.SeriesPT.set_ExportType" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the export value for PET array</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>export_value (str, optional): [‘raw’, ‘suv’, ‘sul’]. Defaults to ‘suv’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.reader">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dicom_to_cnn.model.reader" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Salim Kanoun, Wendy Revailler.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

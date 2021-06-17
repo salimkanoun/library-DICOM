@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>dicom_to_cnn.tools.pre_processing package &mdash; dicom_to_cnn 0.72 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dicom_to_cnn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">dicom_to_cnn.tools.pre_processing package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.pre_processing.array_convertor">dicom_to_cnn.tools.pre_processing.array_convertor module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.pre_processing.convert_format">dicom_to_cnn.tools.pre_processing.convert_format module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.pre_processing.series">dicom_to_cnn.tools.pre_processing.series module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.pre_processing.threshold_mask">dicom_to_cnn.tools.pre_processing.threshold_mask module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.pre_processing">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dicom_to_cnn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>dicom_to_cnn.tools.pre_processing package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dicom_to_cnn.tools.pre_processing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dicom-to-cnn-tools-pre-processing-package">
+<h1>dicom_to_cnn.tools.pre_processing package<a class="headerlink" href="#dicom-to-cnn-tools-pre-processing-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.pre_processing.array_convertor">
+<span id="dicom-to-cnn-tools-pre-processing-array-convertor-module"></span><h2>dicom_to_cnn.tools.pre_processing.array_convertor module<a class="headerlink" href="#module-dicom_to_cnn.tools.pre_processing.array_convertor" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.pre_processing.array_convertor.convert_array_to_img">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.pre_processing.array_convertor.</span></span><span class="sig-name descname"><span class="pre">convert_array_to_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numpy_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serie_object</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="dicom_to_cnn.model.reader.html#dicom_to_cnn.model.reader.Series.Series" title="dicom_to_cnn.model.reader.Series.Series"><span class="pre">dicom_to_cnn.model.reader.Series.Series</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">SimpleITK.SimpleITK.Image</span><a class="headerlink" href="#dicom_to_cnn.tools.pre_processing.array_convertor.convert_array_to_img" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to convert np.ndarray of shape (z,y,x,c) into pixel vector sitk Image of shape (x,y,z), associated with a PET Series</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[sitk.Image]: [return the corresponding sitk.Image from numpy_array]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.pre_processing.convert_format">
+<span id="dicom-to-cnn-tools-pre-processing-convert-format-module"></span><h2>dicom_to_cnn.tools.pre_processing.convert_format module<a class="headerlink" href="#module-dicom_to_cnn.tools.pre_processing.convert_format" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.pre_processing.convert_format.convert_format_nifti_mask">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.pre_processing.convert_format.</span></span><span class="sig-name descname"><span class="pre">convert_format_nifti_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nifti_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.tools.pre_processing.convert_format.convert_format_nifti_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert 8Bits UINT nifti mask to 32Bits UINT nifti mask</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>nifti_path ([str]): [path of the nifti file]
+destination ([str]): [path of destination’s directory]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.pre_processing.series">
+<span id="dicom-to-cnn-tools-pre-processing-series-module"></span><h2>dicom_to_cnn.tools.pre_processing.series module<a class="headerlink" href="#module-dicom_to_cnn.tools.pre_processing.series" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.pre_processing.series.get_series_object">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.pre_processing.series.</span></span><span class="sig-name descname"><span class="pre">get_series_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.tools.pre_processing.series.get_series_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>class method to generate a Series object</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path (str): [path folder of series]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[Series]: [return a Series object]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.pre_processing.threshold_mask">
+<span id="dicom-to-cnn-tools-pre-processing-threshold-mask-module"></span><h2>dicom_to_cnn.tools.pre_processing.threshold_mask module<a class="headerlink" href="#module-dicom_to_cnn.tools.pre_processing.threshold_mask" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.pre_processing.threshold_mask.threshold_matrix">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.pre_processing.threshold_mask.</span></span><span class="sig-name descname"><span class="pre">threshold_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pet_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.tools.pre_processing.threshold_mask.threshold_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to threshold a ndarray mask</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>mask_array (np.ndarray): [(z,x,y,c)]
+pet_array (np.ndarray): [(z,x,y)]
+threshold (float): [0.41, 2.5, 4.0 or other]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[ndarray]: [threshold mask]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.pre_processing">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dicom_to_cnn.tools.pre_processing" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Salim Kanoun, Wendy Revailler.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

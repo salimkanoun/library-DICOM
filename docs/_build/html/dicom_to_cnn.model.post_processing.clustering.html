@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>dicom_to_cnn.model.post_processing.clustering package &mdash; dicom_to_cnn 0.72 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dicom_to_cnn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">dicom_to_cnn.model.post_processing.clustering package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.post_processing.clustering.Watershed">dicom_to_cnn.model.post_processing.clustering.Watershed module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.post_processing.clustering">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dicom_to_cnn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>dicom_to_cnn.model.post_processing.clustering package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dicom_to_cnn.model.post_processing.clustering.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dicom-to-cnn-model-post-processing-clustering-package">
+<h1>dicom_to_cnn.model.post_processing.clustering package<a class="headerlink" href="#dicom-to-cnn-model-post-processing-clustering-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dicom_to_cnn.model.post_processing.clustering.Watershed">
+<span id="dicom-to-cnn-model-post-processing-clustering-watershed-module"></span><h2>dicom_to_cnn.model.post_processing.clustering.Watershed module<a class="headerlink" href="#module-dicom_to_cnn.model.post_processing.clustering.Watershed" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.post_processing.clustering.Watershed.</span></span><span class="sig-name descname"><span class="pre">Watershed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary_img</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">SimpleITK.SimpleITK.Image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pet_img</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">SimpleITK.SimpleITK.Image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to generate subsegmentation mask with a watershed model</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.applied_watershed_model">
+<span class="sig-name descname"><span class="pre">applied_watershed_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">SimpleITK.SimpleITK.Image</span><a class="headerlink" href="#dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.applied_watershed_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>applied watershed model process</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[sitk.Image]: [return the watershed labelled sitk.Image]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.define_marker_array">
+<span class="sig-name descname"><span class="pre">define_marker_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">localMax</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">tuple</span><a class="headerlink" href="#dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.define_marker_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to attribute a label on every local peak points</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>localMax (np.ndarray): [a np.ndarray with local peak points (z,y,x)]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[tuple]: [return a labelled local peak points np.ndarray and the number of local peak points]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.generated_connected_component_img">
+<span class="sig-name descname"><span class="pre">generated_connected_component_img</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.generated_connected_component_img" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to generate a first labelled img and its np.ndarray by connected component</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.get_distance_map">
+<span class="sig-name descname"><span class="pre">get_distance_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.get_distance_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate distance map of a given array</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>array (np.ndarray): [np.ndarray (z,y,x)]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[np.ndarray]: [return distance map of the given array]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.get_local_peak">
+<span class="sig-name descname"><span class="pre">get_local_peak</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance_map</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.get_local_peak" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate local peak from a given distance map (np.ndarray)</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>distance_map (np.ndarray): [a 3D ndarray/distance map (z,y,x)]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[np.ndarray]: [return a np.ndarray with local peak points (= 1)]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.get_mask_roi_matrix">
+<span class="sig-name descname"><span class="pre">get_mask_roi_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.get_mask_roi_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get a new ROI ndarray for a chosen label</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>label (int): [a choosen label]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[np.ndarray]: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.get_suv_values_matrix">
+<span class="sig-name descname"><span class="pre">get_suv_values_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.get_suv_values_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to get a new SUV ndarray for a chosen label</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>label ([int]): [a chosen label]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[np.ndarray]: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.remove_small_roi">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">remove_small_roi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary_img</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">SimpleITK.SimpleITK.Image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pet_img</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">SimpleITK.SimpleITK.Image</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">SimpleITK.SimpleITK.Image</span><a class="headerlink" href="#dicom_to_cnn.model.post_processing.clustering.Watershed.Watershed.remove_small_roi" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to remove ROI under 30 ml on a binary sitk.Image</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>binary_img (sitk.Image): [sitk.Image of size (z,y,x)]
+pet_img (sitk.Image): [sitk.Image of the PET, size (z,y,x)]</p>
+</dd>
+<dt>Raises:</dt><dd><p>Exception: [raise Exception if not a 3D binary mask]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[sitk.Image]: [Return cleaned image]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.post_processing.clustering">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dicom_to_cnn.model.post_processing.clustering" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Salim Kanoun, Wendy Revailler.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

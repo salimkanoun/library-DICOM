@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>dicom_to_cnn.tools.pyradiomics package &mdash; dicom_to_cnn 0.72 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dicom_to_cnn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">dicom_to_cnn.tools.pyradiomics package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.pyradiomics.pyradiomic">dicom_to_cnn.tools.pyradiomics.pyradiomic module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.pyradiomics">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dicom_to_cnn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>dicom_to_cnn.tools.pyradiomics package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dicom_to_cnn.tools.pyradiomics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dicom-to-cnn-tools-pyradiomics-package">
+<h1>dicom_to_cnn.tools.pyradiomics package<a class="headerlink" href="#dicom-to-cnn-tools-pyradiomics-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.pyradiomics.pyradiomic">
+<span id="dicom-to-cnn-tools-pyradiomics-pyradiomic-module"></span><h2>dicom_to_cnn.tools.pyradiomics.pyradiomic module<a class="headerlink" href="#module-dicom_to_cnn.tools.pyradiomics.pyradiomic" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.pyradiomics.pyradiomic.calcul_distance_max">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.pyradiomics.pyradiomic.</span></span><span class="sig-name descname"><span class="pre">calcul_distance_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_center</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="headerlink" href="#dicom_to_cnn.tools.pyradiomics.pyradiomic.calcul_distance_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calcul the maximum distance between two ROIs</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>list_center ([list]): [list of [x,y,z] physical coordonates of every ROIs center]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[float]: [Return maximum distance, in mm]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.pyradiomics.pyradiomic.distance">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.pyradiomics.pyradiomic.</span></span><span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord_A</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord_B</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="headerlink" href="#dicom_to_cnn.tools.pyradiomics.pyradiomic.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>calcul euclidian distance between 2 points in 3D</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>coord_A ([list]): [[x,y,z] coordonate point A]
+coord_B ([list]): [[x,y,z] coordonate point A]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[float]: [Return euclidian distance]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.pyradiomics.pyradiomic.get_bigger_roi_number">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.pyradiomics.pyradiomic.</span></span><span class="sig-name descname"><span class="pre">get_bigger_roi_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pet_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">tuple</span><a class="headerlink" href="#dicom_to_cnn.tools.pyradiomics.pyradiomic.get_bigger_roi_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to find the biggest ROI (volume) in mask</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>mask_path ([str]): [path of nifti mask (3D image, PixelVector type), size (x,y,z)]
+pet_path (str): [path of nifti PET]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[tuple]: [Return number of the biggest ROI and  the SUV max value of the biggest ROI]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.pyradiomics.pyradiomic.get_center_of_mass">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.pyradiomics.pyradiomic.</span></span><span class="sig-name descname"><span class="pre">get_center_of_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.41</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pet_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.tools.pyradiomics.pyradiomic.get_center_of_mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of every ROIs center</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>mask_path ([str]): [path of nifti mask (3D image, PixelVector type), size (x,y,z)]
+thresh (float, optional): [If choose to threshold the mask, set a threshold. Instead, thresh=None]. Defaults to 0.41.
+pet_path ([str], optional): [If thresh is True, nifti PET path]. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [Return a list of list of x,y,z physical coordonates of every ROIs center.]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.pyradiomics.pyradiomic.get_diameter">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.pyradiomics.pyradiomic.</span></span><span class="sig-name descname"><span class="pre">get_diameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pet_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_bigger_roi</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">tuple</span><a class="headerlink" href="#dicom_to_cnn.tools.pyradiomics.pyradiomic.get_diameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>get 2D and 3D diameter of the biggest ROI in MASK</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>mask_path ([str]): [path of nifti mask (3D image, PixelVector type), size (x,y,z)]
+pet_path ([str]): [path of nifti PET]
+number_bigger_roi ([int]): [Number of the bigger ROI (in volume)]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[tuple]: [Return 2D and 3D float diameter]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.pyradiomics">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dicom_to_cnn.tools.pyradiomics" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Salim Kanoun, Wendy Revailler.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

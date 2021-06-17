@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>dicom_to_cnn.tools.cleaning_dicom package &mdash; dicom_to_cnn 0.72 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dicom_to_cnn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">dicom_to_cnn.tools.cleaning_dicom package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.cleaning_dicom.cleaning_series">dicom_to_cnn.tools.cleaning_dicom.cleaning_series module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.cleaning_dicom.folders">dicom_to_cnn.tools.cleaning_dicom.folders module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.tools.cleaning_dicom">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dicom_to_cnn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>dicom_to_cnn.tools.cleaning_dicom package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dicom_to_cnn.tools.cleaning_dicom.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dicom-to-cnn-tools-cleaning-dicom-package">
+<h1>dicom_to_cnn.tools.cleaning_dicom package<a class="headerlink" href="#dicom-to-cnn-tools-cleaning-dicom-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.cleaning_dicom.cleaning_series">
+<span id="dicom-to-cnn-tools-cleaning-dicom-cleaning-series-module"></span><h2>dicom_to_cnn.tools.cleaning_dicom.cleaning_series module<a class="headerlink" href="#module-dicom_to_cnn.tools.cleaning_dicom.cleaning_series" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.cleaning_series.find_non_intersting_series">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.cleaning_series.</span></span><span class="sig-name descname"><span class="pre">find_non_intersting_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_merged_file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.cleaning_series.find_non_intersting_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>find non interesting series (not all body PET or all body CT)</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>json_merged_file_path (str): [merged json file generated by generated_merged_file() function]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [Return the list of each serie path which is not interesting]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.cleaning_series.find_studies_over_two_series">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.cleaning_series.</span></span><span class="sig-name descname"><span class="pre">find_studies_over_two_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_merged_file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">tuple</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.cleaning_series.find_studies_over_two_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>find study with more than 2 series</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>json_merged_file_path (str): [merged json file generated by generated_merged_file() function]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[tuple]: [Return the list of each serie path which belong to a study with more than 2 series and their path]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.cleaning_series.find_studies_with_two_series">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.cleaning_series.</span></span><span class="sig-name descname"><span class="pre">find_studies_with_two_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_merged_file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">tuple</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.cleaning_series.find_studies_with_two_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>find study with two series</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>json_merged_file_path (str): [merged json file generated by generated_merged_file() function]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[tuple]: [Return the list of each serie path which belong to a study with 2 series and their path]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.cleaning_series.generate_merged_file">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.cleaning_series.</span></span><span class="sig-name descname"><span class="pre">generate_merged_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.cleaning_series.generate_merged_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to generate a json file to gather information about other json file with series details.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>json_path (str): [directory’s path where the series json are]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[dict]: [dict to gather informations about series json]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.cleaning_series.remove_path_from_disk">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.cleaning_series.</span></span><span class="sig-name descname"><span class="pre">remove_path_from_disk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.cleaning_series.remove_path_from_disk" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove a serie from disk</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path (str): [a serie’s path]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.cleaning_dicom.folders">
+<span id="dicom-to-cnn-tools-cleaning-dicom-folders-module"></span><h2>dicom_to_cnn.tools.cleaning_dicom.folders module<a class="headerlink" href="#module-dicom_to_cnn.tools.cleaning_dicom.folders" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.folders.get_series_path">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.folders.</span></span><span class="sig-name descname"><span class="pre">get_series_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.folders.get_series_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Go through all the folder to find every series path</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>path {[string]} – [Absolute path where the repertory is located]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list] – [Path’s list of every series]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.folders.remove_bi_file">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.folders.</span></span><span class="sig-name descname"><span class="pre">remove_bi_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.folders.remove_bi_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove bi file of a dicom serie</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path (str): [directory’s path of the serie]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.folders.remove_empty_folders">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.folders.</span></span><span class="sig-name descname"><span class="pre">remove_empty_folders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.folders.remove_empty_folders" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove serie with no dicom file in it</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path (str): [directory’s path of a dicom serie]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.folders.remove_index_ini">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.folders.</span></span><span class="sig-name descname"><span class="pre">remove_index_ini</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.folders.remove_index_ini" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove index ini of a dicom serie</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path (str): [directory’s path of the serie]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.tools.cleaning_dicom.folders.write_json_file">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.tools.cleaning_dicom.folders.</span></span><span class="sig-name descname"><span class="pre">write_json_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'json'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.tools.cleaning_dicom.folders.write_json_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>write and save a json file</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path (str): [directory’s path where to save json file]
+file_name (str): [name of the json file]
+content (list): [what to write in the json file]
+extension (str, optional): [description]. Defaults to ‘json’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.tools.cleaning_dicom">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dicom_to_cnn.tools.cleaning_dicom" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Salim Kanoun, Wendy Revailler.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

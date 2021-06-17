@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>dicom_to_cnn.model.petctviewer package &mdash; dicom_to_cnn 0.72 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dicom_to_cnn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">dicom_to_cnn.model.petctviewer package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.petctviewer.CsvReader">dicom_to_cnn.model.petctviewer.CsvReader module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.petctviewer.MaskBuilder">dicom_to_cnn.model.petctviewer.MaskBuilder module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.petctviewer.Roi">dicom_to_cnn.model.petctviewer.Roi module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.petctviewer.RoiElipse">dicom_to_cnn.model.petctviewer.RoiElipse module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.petctviewer.RoiFactory">dicom_to_cnn.model.petctviewer.RoiFactory module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.petctviewer.RoiNifti">dicom_to_cnn.model.petctviewer.RoiNifti module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.petctviewer.RoiPolygon">dicom_to_cnn.model.petctviewer.RoiPolygon module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.petctviewer.csv_volume">dicom_to_cnn.model.petctviewer.csv_volume module</a></li>
+<li><a class="reference internal" href="#module-dicom_to_cnn.model.petctviewer">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dicom_to_cnn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>dicom_to_cnn.model.petctviewer package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dicom_to_cnn.model.petctviewer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dicom-to-cnn-model-petctviewer-package">
+<h1>dicom_to_cnn.model.petctviewer package<a class="headerlink" href="#dicom-to-cnn-model-petctviewer-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dicom_to_cnn.model.petctviewer.CsvReader">
+<span id="dicom-to-cnn-model-petctviewer-csvreader-module"></span><h2>dicom_to_cnn.model.petctviewer.CsvReader module<a class="headerlink" href="#module-dicom_to_cnn.model.petctviewer.CsvReader" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.CsvReader.</span></span><span class="sig-name descname"><span class="pre">CsvReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>CSV Parser for CSV generated by petctviewer.org</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.convert_manual_row_to_object">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">convert_manual_row_to_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manual_row</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_row</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.convert_manual_row_to_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a row manual row in an object with ROI details</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>manual_row ([list]) : manual row, where to find coordonates
+results_row ([list]) : results row, where to find name, roi_number, suv_mean, sd, suv_max, etc</p>
+</dd>
+<dt>Returns:</dt><dd><p>[dict] – dict describing the ROI</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.convert_nifti_row_to_object">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">convert_nifti_row_to_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nifti_row</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_row</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.convert_nifti_row_to_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of point included in the roi</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>nifti_row ([list]) : nifti row of the csv, where to find coordonates
+results_row ([list]) : results row, where to find name, roi_number, suv_mean, sd, suv_max, etc</p>
+</dd>
+<dt>Returns:</dt><dd><p>[dict] – dict describing the ROI</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_SUL">
+<span class="sig-name descname"><span class="pre">get_SUL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_SUL" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the SUL value of the CSV</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_SUVlo">
+<span class="sig-name descname"><span class="pre">get_SUVlo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_SUVlo" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the SUVlo value of the CSV</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_csv_roi_details">
+<span class="sig-name descname"><span class="pre">get_csv_roi_details</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_csv_roi_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a dict with each ROI information to build the mask</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>([dict])<span class="classifier">{(roi)1</span><span class="classifier">{dict generated by convert_manual_row_to_object() or convert_nifti_row_to_object() }, </span></dt><dd><p>(roi)2 : // , 
+…
+‘SUL’ : value , 
+‘SUVlo’ : value}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_date">
+<span class="sig-name descname"><span class="pre">get_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>return date in csv file</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[str]: [return date in csv file]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_manual_rois">
+<span class="sig-name descname"><span class="pre">get_manual_rois</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_manual_rois" title="Permalink to this definition">¶</a></dt>
+<dd><p>return manual rois block</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_nifti_rois">
+<span class="sig-name descname"><span class="pre">get_nifti_rois</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_nifti_rois" title="Permalink to this definition">¶</a></dt>
+<dd><p>return automatic (nifti) roi block</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_patient_id">
+<span class="sig-name descname"><span class="pre">get_patient_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_patient_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>return patient id in csv file</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[str]: [retuen patient id in csv file]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_rois_results">
+<span class="sig-name descname"><span class="pre">get_rois_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_rois_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return CSV lines containing ROIs results</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_sum_row">
+<span class="sig-name descname"><span class="pre">get_sum_row</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_sum_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>return csv line containing sum rois volume</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_time">
+<span class="sig-name descname"><span class="pre">get_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.get_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>return time in csv file</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[str]: [return time in csv file]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.list_string_to_point_list_int">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">list_string_to_point_list_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_list_string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader.list_string_to_point_list_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms point string into list of coordinate (int)</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>point_list_strings ([list]) : list of point string</p>
+</dd>
+<dt>Returns:</dt><dd><p>point_list [(list)] : [return list of coordonates (int)]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.petctviewer.MaskBuilder">
+<span id="dicom-to-cnn-model-petctviewer-maskbuilder-module"></span><h2>dicom_to_cnn.model.petctviewer.MaskBuilder module<a class="headerlink" href="#module-dicom_to_cnn.model.petctviewer.MaskBuilder" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.MaskBuilder.</span></span><span class="sig-name descname"><span class="pre">MaskBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dicom_to_cnn.model.petctviewer.CsvReader.CsvReader" title="dicom_to_cnn.model.petctviewer.CsvReader.CsvReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">dicom_to_cnn.model.petctviewer.CsvReader.CsvReader</span></code></a></p>
+<p>Class to build ndarray mask from a csv file</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>CsvReader {[class]} – [description]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.build_mask">
+<span class="sig-name descname"><span class="pre">build_mask</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.build_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>build 3D numpy array mask, for each ROI, with ROI coordonates from a CSV, stack them in a 4D matrix</p>
+<dl class="simple">
+<dt>Returns<span class="classifier"></span></dt><dd><p>([np.ndarray]) : [return 4D mask segmentation, uint8]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.calcul_suv">
+<span class="sig-name descname"><span class="pre">calcul_suv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nifti_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.calcul_suv" title="Permalink to this definition">¶</a></dt>
+<dd><p>calcul SUV Mean, SUV Max and SD from the mask, for each ROI, and put results in a dict</p>
+<dl>
+<dt>Arguments<span class="classifier"></span></dt><dd><p>nifti_array ([np.ndarray]) : [x,y,z,c] matrix</p>
+</dd>
+<dt>Return :</dt><dd><dl>
+<dt>([dict])<span class="classifier">[return dict with results, dict = {{1</span><span class="classifier">SUV Max</span><span class="classifier">value </span></dt><dd><blockquote>
+<div><p>SUV Mean : value
+SD},</p>
+</div></blockquote>
+<dl class="simple">
+<dt>{2<span class="classifier">SUV Max</span><span class="classifier">value </span></dt><dd><p>SUV Mean : value
+SD}, …       } ]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.coronal_list_points_to_axial">
+<span class="sig-name descname"><span class="pre">coronal_list_points_to_axial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_points</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.coronal_list_points_to_axial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the list_points in coronal to axial 
+coronal           axial</p>
+<blockquote>
+<div><p>x                 x
+y                 z
+z                 y</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Arguments<span class="classifier"></span></dt><dd><p>list_points ([list]) : [ [[x,y,z], [x,y,z], …] list points ]</p>
+</dd>
+<dt>Return :</dt><dd><p>([list]) : [ [[x,z,y], [x,z,y], …] list points ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.ecart_SD">
+<span class="sig-name descname"><span class="pre">ecart_SD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nifti_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.ecart_SD" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the difference between calculate_SD and csv_SD for each ROI</p>
+<dl class="simple">
+<dt>Arguments<span class="classifier"></span></dt><dd><p>nifti_array ([np.ndarray]) : [x,y,z,c] matrix</p>
+</dd>
+<dt>Return<span class="classifier"></span></dt><dd><p>([list]) : [return results in list format]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.ecart_suv_max">
+<span class="sig-name descname"><span class="pre">ecart_suv_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nifti_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.ecart_suv_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the difference between calculate_SUV_MAX and csv_SUV_MAX for each ROI</p>
+<dl class="simple">
+<dt>Arguments<span class="classifier"></span></dt><dd><p>nifti_array ([np.ndarray]) : [x,y,z,c] matrix</p>
+</dd>
+<dt>Return<span class="classifier"></span></dt><dd><p>([list]) : [return results in list format]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.ecart_suv_mean">
+<span class="sig-name descname"><span class="pre">ecart_suv_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nifti_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.ecart_suv_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the difference between calculate_SUV_MEAN and csv_SUV_MEAN for each ROI</p>
+<dl class="simple">
+<dt>Arguments<span class="classifier"></span></dt><dd><p>nifti_array ([np.ndarray]) : [x,y,z,c] matrix</p>
+</dd>
+<dt>Return<span class="classifier"></span></dt><dd><p>([list]) : [return results in list format]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.flip_z">
+<span class="sig-name descname"><span class="pre">flip_z</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nifti_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.flip_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>flip z axis in the mask matrix</p>
+<dl class="simple">
+<dt>Arguments<span class="classifier"></span></dt><dd><p>nifti_array ([np.ndarray]) : [x,y,z,c] matrix</p>
+</dd>
+<dt>Return<span class="classifier"></span></dt><dd><p>([np.ndarray]) : [return flip matrix]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.is_calcul_sul_correct">
+<span class="sig-name descname"><span class="pre">is_calcul_sul_correct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.is_calcul_sul_correct" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if the SUL in the CSV file and the calculated SUL is the same</p>
+<dl class="simple">
+<dt>Arguments :</dt><dd><p>series_path ([str]) : [directory path of the PET serie]</p>
+</dd>
+<dt>Return<span class="classifier"></span></dt><dd><p>([bool]) : [return True if calculated SUL and CSV SUL is the same, False instead]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.is_correct_suv">
+<span class="sig-name descname"><span class="pre">is_correct_suv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nifti_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.is_correct_suv" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if calculated SUV Mean, SUV Max and SD is correct</p>
+<dl class="simple">
+<dt>Arguments<span class="classifier"></span></dt><dd><p>nifti_array ([np.ndarray]) : [x,y,z,c] matrix</p>
+</dd>
+<dt>Return<span class="classifier"></span></dt><dd><p>([bool]) : [return True if calculated SUV Mean, Max and SD and CSV SUV Mean, Max, and SD are the same, False instead]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.saggital_list_points_to_axial">
+<span class="sig-name descname"><span class="pre">saggital_list_points_to_axial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_points</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.MaskBuilder.MaskBuilder.saggital_list_points_to_axial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the list_points in saggital to axial
+saggital           axial</p>
+<blockquote>
+<div><p>x                 z
+y                 x
+z                 y</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Arguments<span class="classifier"></span></dt><dd><p>list_points ([list]) : [ [[x,y,z], [x,y,z], …] list points ]</p>
+</dd>
+<dt>Return :</dt><dd><p>([list]) : [ [[z,x,y], [z,x,y], …] list points ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.petctviewer.Roi">
+<span id="dicom-to-cnn-model-petctviewer-roi-module"></span><h2>dicom_to_cnn.model.petctviewer.Roi module<a class="headerlink" href="#module-dicom_to_cnn.model.petctviewer.Roi" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.Roi.Roi">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.Roi.</span></span><span class="sig-name descname"><span class="pre">Roi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_slice</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_slice</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_point</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_dimension</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.Roi.Roi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to represent a ROI</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.Roi.Roi.coronal_to_axial">
+<span class="sig-name descname"><span class="pre">coronal_to_axial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np_array_3D</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.Roi.Roi.coronal_to_axial" title="Permalink to this definition">¶</a></dt>
+<dd><p>transform coronal 3d ndarray to 3d axial ndarray</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>np_array_3D (np.ndarray): [ROI ndarray]]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[np.ndarray]: [return axial ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.Roi.Roi.get_empty_np_array">
+<span class="sig-name descname"><span class="pre">get_empty_np_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.Roi.Roi.get_empty_np_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return numpy array to fill given the current dimension and axis</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[np.ndarray] – zero filled numpy array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.Roi.Roi.get_mask">
+<span class="sig-name descname"><span class="pre">get_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_points</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.Roi.Roi.get_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate an empty ndarray and fill up with ROI coordonates</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>list_points (list): [ [[x,y,z], [x,y,z], [x,y,z], …] ]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[np.ndarray]: [return binary ndarray of the ROI]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.Roi.Roi.mask_roi_in_slice">
+<span class="sig-name descname"><span class="pre">mask_roi_in_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">patch:</span> <span class="pre">&lt;module</span> <span class="pre">'matplotlib.patches'</span> <span class="pre">from</span> <span class="pre">'/home/deeplearning/.local/lib/python3.8/site-packages/matplotlib/patches.py'&gt;</span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.Roi.Roi.mask_roi_in_slice" title="Permalink to this definition">¶</a></dt>
+<dd><p>get ROI x and y limits in which we will loop, to gather [x,y] pixel which are in the patch</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>patch (matplotlib.patches): [polygon or ellipse]]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[list]: [list of [x,y] coordonates]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.Roi.Roi.sagittal_to_axial">
+<span class="sig-name descname"><span class="pre">sagittal_to_axial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np_array_3D</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.Roi.Roi.sagittal_to_axial" title="Permalink to this definition">¶</a></dt>
+<dd><p>transform saggital 3d ndarray to 3d axial ndarray</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>np_array_3D (np.ndarray): [ROI ndarray]]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[np.ndarray]: [return axial ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.petctviewer.RoiElipse">
+<span id="dicom-to-cnn-model-petctviewer-roielipse-module"></span><h2>dicom_to_cnn.model.petctviewer.RoiElipse module<a class="headerlink" href="#module-dicom_to_cnn.model.petctviewer.RoiElipse" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.RoiElipse.RoiElipse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.RoiElipse.</span></span><span class="sig-name descname"><span class="pre">RoiElipse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_slice</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_slice</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_point</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_dimension</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.RoiElipse.RoiElipse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dicom_to_cnn.model.petctviewer.Roi.Roi" title="dicom_to_cnn.model.petctviewer.Roi.Roi"><code class="xref py py-class docutils literal notranslate"><span class="pre">dicom_to_cnn.model.petctviewer.Roi.Roi</span></code></a></p>
+<p>Derivated Class for manual Elipse ROI of PetCtViewer.org</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[RoiElipse] – Roi Elipse Object</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.RoiElipse.RoiElipse.calculateMaskPoint">
+<span class="sig-name descname"><span class="pre">calculateMaskPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.RoiElipse.RoiElipse.calculateMaskPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate [x,y,z] coordonates/voxel which belong to the ROI in ellipse patches</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[list]: [list of [x,y,z] coordonates of ROI ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.petctviewer.RoiFactory">
+<span id="dicom-to-cnn-model-petctviewer-roifactory-module"></span><h2>dicom_to_cnn.model.petctviewer.RoiFactory module<a class="headerlink" href="#module-dicom_to_cnn.model.petctviewer.RoiFactory" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.RoiFactory.RoiFactory">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.RoiFactory.</span></span><span class="sig-name descname"><span class="pre">RoiFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_dimension</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.RoiFactory.RoiFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Create ROI object from a CSV Roi details</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[RoiFactory] – Factory for ROI instanciation according to csv details</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.RoiFactory.RoiFactory.read_roi">
+<span class="sig-name descname"><span class="pre">read_roi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#dicom_to_cnn.model.petctviewer.Roi.Roi" title="dicom_to_cnn.model.petctviewer.Roi.Roi"><span class="pre">dicom_to_cnn.model.petctviewer.Roi.Roi</span></a><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.RoiFactory.RoiFactory.read_roi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instanciate the Correct ROI type according to data</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[Roi] – Roi object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.petctviewer.RoiNifti">
+<span id="dicom-to-cnn-model-petctviewer-roinifti-module"></span><h2>dicom_to_cnn.model.petctviewer.RoiNifti module<a class="headerlink" href="#module-dicom_to_cnn.model.petctviewer.RoiNifti" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.RoiNifti.RoiNifti">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.RoiNifti.</span></span><span class="sig-name descname"><span class="pre">RoiNifti</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_point</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_dimension</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.RoiNifti.RoiNifti" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dicom_to_cnn.model.petctviewer.Roi.Roi" title="dicom_to_cnn.model.petctviewer.Roi.Roi"><code class="xref py py-class docutils literal notranslate"><span class="pre">dicom_to_cnn.model.petctviewer.Roi.Roi</span></code></a></p>
+<p>Derivated Class for automatic Nifti ROI of PetCtViewer.org</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[RoiNifti] – Nifti ROI</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.RoiNifti.RoiNifti.calculateMaskPoint">
+<span class="sig-name descname"><span class="pre">calculateMaskPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.RoiNifti.RoiNifti.calculateMaskPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return [x,y,z] coordonates/voxel of nifti ROI (already in CSV file)</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[list]: [list of [x,y,z] coordonates of ROI ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.petctviewer.RoiPolygon">
+<span id="dicom-to-cnn-model-petctviewer-roipolygon-module"></span><h2>dicom_to_cnn.model.petctviewer.RoiPolygon module<a class="headerlink" href="#module-dicom_to_cnn.model.petctviewer.RoiPolygon" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.RoiPolygon.RoiPolygon">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.RoiPolygon.</span></span><span class="sig-name descname"><span class="pre">RoiPolygon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_slice</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_slice</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roi_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_point</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_dimension</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.RoiPolygon.RoiPolygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dicom_to_cnn.model.petctviewer.Roi.Roi" title="dicom_to_cnn.model.petctviewer.Roi.Roi"><code class="xref py py-class docutils literal notranslate"><span class="pre">dicom_to_cnn.model.petctviewer.Roi.Roi</span></code></a></p>
+<p>Derivated Class for manual Polygon ROI of PetCtViewer.org</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[RoiPolygon] – Polygone ROI</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.RoiPolygon.RoiPolygon.calculateMaskPoint">
+<span class="sig-name descname"><span class="pre">calculateMaskPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.RoiPolygon.RoiPolygon.calculateMaskPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate [x,y,z] coordonates/voxel which belong to the ROI in polygon patches</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[list]: [list of [x,y,z] coordonates of ROI]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.petctviewer.csv_volume">
+<span id="dicom-to-cnn-model-petctviewer-csv-volume-module"></span><h2>dicom_to_cnn.model.petctviewer.csv_volume module<a class="headerlink" href="#module-dicom_to_cnn.model.petctviewer.csv_volume" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.csv_volume.get_difference_volume">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.csv_volume.</span></span><span class="sig-name descname"><span class="pre">get_difference_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">tuple</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.csv_volume.get_difference_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calcul the difference between volume and sum of every ROI volume</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>csv_path ([str]): [CSV file path]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[tuple]: [Return total_volume, sum of every ROIs volume, and difference between the 2]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.csv_volume.get_sum_rois_volume">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.csv_volume.</span></span><span class="sig-name descname"><span class="pre">get_sum_rois_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_results_row</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.csv_volume.get_sum_rois_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>sum all ROIs volume</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>liste ([list]): [List of every ROI results row from CSV file]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[float]: [Return the sum of ROIs volume]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.csv_volume.get_total_volume">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.csv_volume.</span></span><span class="sig-name descname"><span class="pre">get_total_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.csv_volume.get_total_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>get total volume of all ROI in CSV file</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>csv_path (str): [path of the CSV file]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[float]: [total volume of tumor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicom_to_cnn.model.petctviewer.csv_volume.keep_csv_higher_volume">
+<span class="sig-prename descclassname"><span class="pre">dicom_to_cnn.model.petctviewer.csv_volume.</span></span><span class="sig-name descname"><span class="pre">keep_csv_higher_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">liste_csv_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#dicom_to_cnn.model.petctviewer.csv_volume.keep_csv_higher_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>liste_csv_path ([list]): [list of CSV file path]</p>
+</dd>
+<dt>Returns:</dt><dd><p>([list]) : [return the CSV file path with the higher volume]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dicom_to_cnn.model.petctviewer">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dicom_to_cnn.model.petctviewer" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Salim Kanoun, Wendy Revailler.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
