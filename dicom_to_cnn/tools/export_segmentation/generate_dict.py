@@ -3,7 +3,7 @@ import os
 from dicom_to_cnn.tools.cleaning_dicom.folders import *
 
 
-def generate_dict(number_of_roi:int, mode:str) -> dict:
+def generate_dict(number_of_roi:int, name:str, serie_description:str, body_part:str, roi_name:dict, interpreted_type:dict=None) -> dict:
     """a function to generate a dict with informations to generate DICOM SEG or DICOM RTSTRUCT file
     ! no more than 16 characters for each informations ! 
 
@@ -19,50 +19,29 @@ def generate_dict(number_of_roi:int, mode:str) -> dict:
     results["ContentCreatorName"] = "dicom_to_cnn"
     random_number = random.randint(0,1e3)
     
-    name = str(input('Enter filename for json file (filename or nothing):'))
-    if not name : results["ClinicalTrialSeriesID"] = "json_serie"+str(random_number)
-    else : 
-        if len(name) > 16 : results["ClinicalTrialSeriesID"] = name[0:16]
-        else : results["ClinicalTrialSeriesID"] = name #name of json
+    results["ClinicalTrialSeriesID"] = name #name of json
 
     results["ClinicalTrialTimePointID"] = "1"
 
-    description = str(input('Enter serie description (serie description or nothing):'))
-    if not description : results["SeriesDescription"] =''
-    else : 
-        if len(description) > 16 : results["SeriesDescription"] = description[0:16]
-        else : results["SeriesDescription"] = description
+    results["SeriesDescription"] = serie_description
     
     results["SeriesNumber"] = str(random_number)
     results["InstanceNumber"] = str(number_of_roi)
 
-    body_part = str(input('Enter body part examined (body part or nothing) : '))
-    if not body_part : results["BodyPartExamined"] = "all body"
-    else : 
-        if len(body_part) > 16 : results["BodyPartExamined"] = body_part[0:16]
-        else : results["BodyPartExamined"] = body_part
+    results["BodyPartExamined"] = body_part
 
     results["segmentAttributes"] = []
     subliste = []
     for i in range(number_of_roi):
         subdict = {}
         subdict["labelID"]= i+1
-        segment_description = str(input('Enter ROI n°{} description/name (segment description or nothing) : '.format(i+1)))
-        if not segment_description : subdict["SegmentDescription"] = str("ROI {}".format(i+1))
-        else : 
-            if len(segment_description) > 16 : 
-                subdict["SegmentDescription"] = segment_description[0:16]
-            else : subdict["SegmentDescription"] = segment_description
+        subdict["SegmentDescription"] = roi_name[i+1]
 
         subdict["SegmentAlgorithmType"] = "SEMIAUTOMATIC"
         subdict["SegmentAlgorithmName"] =  "DeepOncology"
-        if mode == 'rtstruct' : 
-            RTROIInterpretedType = str(input("Enter RTROIInterpredType for ROI n°{} (predefined type or nothing) : ".format(i+1)))
-            if not RTROIInterpretedType : subdict['RTROIInterpretedType'] = ''
-            else : subdict['RTROIInterpretedType'] = RTROIInterpretedType
+        if interpreted_type is not None : 
+            subdict['RTROIInterpretedType'] = interpreted_type[i+1]
         
-
-
         #subdict["SegmentedPropertyCategoryCodeSequence"] 
         subsubdict = {}
         subsubdict["CodeValue"] = "49755003"

@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 dicom_to_cnn/__init__.py
@@ -35,7 +36,6 @@ dicom_to_cnn/model/reader/SeriesCT.py
 dicom_to_cnn/model/reader/SeriesPT.py
 dicom_to_cnn/model/reader/__init__.py
 dicom_to_cnn/model/segmentation/Abstract_Writer.py
-dicom_to_cnn/model/segmentation/ExportSegmentation_Writer.py
 dicom_to_cnn/model/segmentation/MaskBuilder_DICOMSEG.py
 dicom_to_cnn/model/segmentation/MaskBuilder_RTSS.py
 dicom_to_cnn/model/segmentation/__init__.py

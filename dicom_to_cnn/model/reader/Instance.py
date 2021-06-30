@@ -265,7 +265,10 @@ class Instance:
         Returns:
             str: [description]
         """
-        return self.dicomData[TagsStudy['StudyDescription'].value].value 
+        try : 
+            return self.dicomData[TagsStudy['StudyDescription'].value].value 
+        except Exception : 
+            return ''
 
     def get_study_id(self) -> str:
         """get study id value
@@ -342,7 +345,7 @@ class Instance:
             str: [description]
         """
         if "ReferringPhysicianName" in self.dicomData : return self.dicomData.ReferringPhysicianName
-        else : return "Undefined"
+        else : return ''
 
     def get_specific_character_set(self) -> str:
         """get specific chracter set value
@@ -351,7 +354,7 @@ class Instance:
             str: [description]
         """
         if "SpecificCharacterSet" in self.dicomData : return self.dicomData.SpecificCharacterSet
-        else : return "Undefined"
+        else : return ''
 
     def get_physicians_of_record(self) -> str:
         """geet physicians of record value
@@ -360,7 +363,7 @@ class Instance:
             str: [description]
         """
         if "PhysiciansOfRecord" in self.dicomData : return self.dicomData.PhysiciansOfRecord
-        else : return "Undefined"
+        else : return ''
  
     def is_image_modality(self) -> bool :
         """check if SOPClassUID in sop values list 

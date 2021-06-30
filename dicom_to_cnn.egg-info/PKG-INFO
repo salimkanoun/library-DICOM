@@ -1,42 +1,11 @@
 Metadata-Version: 2.1
 Name: dicom-to-cnn
-Version: 0.72
+Version: 0.75
 Summary: Python Library to handle Input / Output conversion in Dicom <=> Convolutional Neural Network 
 Home-page: https://github.com/wendyrvllr/Dicom-To-CNN
 Author: 
 License: UNKNOWN
-Download-URL: https://github.com/wendyrvllr/Dicom-To-CNN/archive/refs/tags/72.tar.gz
-Description: # library-DICOM
-        
-        
-        Install : pip install dicom-to-cnn 
-        
-        
-        
-        
-        Features : 
-        - Description of Series content in a huge dataset of DICOM (output JSON descriptor for each series containings main DICOM tags).
-        - Conversion Dicom to Nifti
-        - PET : Conversion Bqml/Counts to SUV and SUL
-        
-        Roadmap : 
-        - Read RTSS to generate Mask
-        - Generate RTSS from Mask
-        - PT / CT fusion in 4D array np array
-        
-        #Maintainer  : Salim Kanoun
-        #Contributors : Thomas Trouillard, Wendy Revailler
-        
-        
-        
-        To refactor : 
-        - conversion of a nifti mask to a ROI in a DICOM RTSTRUCT
-        - ROI integration to an existing RTSTRUCT
-        - generation empty RTSTRUCT from PET,CT or similar set of DICOM images
-        
-        **TODO :** 
-        - conversion DICOM RTSTRUCT to mask in nifti format
-        
+Download-URL: https://github.com/wendyrvllr/Dicom-To-CNN/archive/refs/tags/75.tar.gz
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
@@ -44,3 +13,25 @@ Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Dicom-To-CNN
+
+Install : pip install dicom-to-cnn 
+
+Features : 
+- Description of Series content in a huge dataset of DICOM (output JSON descriptor for each series containings main DICOM tags).
+- Conversion  :
+  - Dicom to Nifti
+  - Mask to RTSS and DICOMSeg
+  - RTSS to mask
+- PET/CT
+  - Conversion Bqml/Counts to SUV and SUL
+  - Fusion
+
+TODO : DicomSeg To mask
+
+#Maintainer  : Salim Kanoun
+#Contributors : Thomas Trouillard, Wendy Revailler
+
+

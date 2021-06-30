@@ -18,8 +18,64 @@ class DICOMSEG_Writer(Abstract_Writer):
             img_mask ([sitk.Image]): [sitk img of segmentation, [x,y,z]]
             serie_path ([str]): [Serie path related to DICOMSEG file]
         """
-        super().__init__(mask_img)
+        self.mask_img = mask_img
         self.serie_path = serie_path
+
+    def setDictName(self, name:str) -> str : 
+        """set the dict name 
+
+        Args:
+            name (str): [dict name]
+
+        """
+        self.dict_name = name
+        
+    def setBodyPartExaminated(self, name:str) -> str : 
+        """set the body part examinated
+
+        Args:
+            name (str): [name of the body part]
+
+        """
+        if len(name) > 16 : self.body_part =  name[0:16]
+        
+        else : self.body_part = name
+
+    def setSeriesDescription(self, description:str) -> str : 
+        """set the study description of the exam
+
+        Args:
+            description (str): [study description]
+
+        """
+        if len(description) > 16 : self.serie_description = description[0:16]
+        else : self.serie_description =  description 
+
+    def setRoiName(self, dictionnary:dict) -> dict : 
+        """set a dict for ROI Name, for each ROI
+
+        Args:
+            dictionnary (dict): [{1 : 'name roi 1', 
+                                  2:'name roi 2', 
+                                 etc }]
+
+        """
+        self.roi_name_dict = dictionnary
+
+    def setAutoRoiName(self) -> dict : 
+        """set an auto dict with ROI Name value 
+
+            generated dict  {1 : 'ROI 1', 
+                            2 : 'ROI 2', 
+                             etc }]
+        """
+        mask_array = sitk.GetArrayFromImage(self.mask_img)
+        number_of_roi = int(np.max(mask_array))
+        dictionnary = {}
+        for i in range(1, number_of_roi+1):
+            dictionnary[i] = str("ROI {}".format(i+1))
+        self.roi_name_dict =  dictionnary
+
 
     def __generate_dict_json(self, directory_path:str) -> str:
         """method to generate dict with metainfo for DICOM SEG file and save it as json file
@@ -30,9 +86,8 @@ class DICOMSEG_Writer(Abstract_Writer):
         Returns:
             [str]: [return the path of the json generated]
         """
-        pred_array = sitk.GetArrayFromImage(self.mask_img)
-        number_of_roi = np.max(pred_array)
-        results = generate_dict(number_of_roi, 'dicomseg')
+        number_of_roi = int(np.max(sitk.GetArrayFromImage(self.mask_img)))
+        results = generate_dict(number_of_roi, self.dict_name, self.serie_description, self.body_part, self.roi_name_dict, interpreted_type=None)
         self.results = results
         json_path = save_dict_as_json(results, directory_path)
         return json_path 
@@ -68,6 +123,7 @@ class DICOMSEG_Writer(Abstract_Writer):
             )
 
         dcm = writer.write(segmentation, source_images)
+        os.remove(json_path)
         return dcm
 
 

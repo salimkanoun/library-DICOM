@@ -13,7 +13,7 @@ class Nifti_Writer(Abstract_Writer):
         Args:
             img_mask (sitk.Image) : [sitk.Image of shape (x,y,z)]
         """
-        super().__init__(mask_img)
+        self.mask_img = mask_img
 
     def save_file(self, filename:str, directory_path:str) -> None :
         """method to save the new nifti file

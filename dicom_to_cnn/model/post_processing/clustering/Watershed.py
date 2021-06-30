@@ -18,7 +18,7 @@ class Watershed:
             binary_img (sitk.Image): [binary segmentation sitk.Image (x,y,z) ]
             pet_img (sitk.Image): [pet sitk.Image associated (x,y,z)]
         """
-        self.binary_img = self.remove_small_roi(binary_img, pet_img)
+        self.binary_img = binary_img
         self.pet_img = pet_img
         self.binary_array = sitk.GetArrayFromImage(self.binary_img) #(z,y,x)
         self.pet_array = sitk.GetArrayFromImage(self.pet_img) # (z,y,x)
@@ -106,18 +106,25 @@ class Watershed:
             [sitk.Image]: [return the watershed labelled sitk.Image]
         """
         new_coordonates = []
+        pet_spacing = self.pet_img.GetSpacing()
+        volume_voxel = pet_spacing[0] * pet_spacing[1] * pet_spacing[2] * 10**(-3) #in ml 
         labels = np.arange(1, self.number_of_cc+1, 1)
         for label in labels: 
-            suv_values= self.get_suv_values_matrix(label)
-            localMax = self.get_local_peak(suv_values) 
-            marker_array, num_features = self.define_marker_array(localMax)
-            if num_features != 0 : 
-                new_label_mask = watershed(image=-suv_values, markers=marker_array, mask=suv_values)
-                new_label_mask = new_label_mask.astype(np.uint8)
-                for new_label in range(1, num_features + 1):
-                    if len(np.where(new_label_mask == new_label)[0]) != 0 : 
-                        new_coordonates.append(np.where(new_label_mask == new_label))
-        
+            pixel_roi = int(len(np.where(self.labelled_array == label)[0]))
+            volume_roi = pixel_roi * volume_voxel 
+            if volume_roi < int(30) : 
+                new_coordonates.append(np.where(self.labelled_array == label))
+            else : 
+                suv_values= self.get_suv_values_matrix(label)
+                localMax = self.get_local_peak(suv_values) 
+                marker_array, num_features = self.define_marker_array(localMax)
+                if num_features != 0 : 
+                    new_label_mask = watershed(image=-suv_values, markers=marker_array, mask=suv_values)
+                    new_label_mask = new_label_mask.astype(np.uint8)
+                    for new_label in range(1, num_features + 1):
+                        if len(np.where(new_label_mask == new_label)[0]) != 0 : 
+                            new_coordonates.append(np.where(new_label_mask == new_label))
+            
         number_total_of_label = len(new_coordonates)
         watershed_array = np.zeros(self.binary_array.shape)
         for coordonate, label in zip(new_coordonates, np.arange(1, number_total_of_label+1, 1)):
@@ -132,6 +139,7 @@ class Watershed:
         watershed_img.SetDirection(pet_direction)
         
         return watershed_img
+        
 
 
     @classmethod
